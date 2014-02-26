@@ -3,7 +3,10 @@ using System.Collections;
 
 public class SpawnTrees : MonoBehaviour {
 	public Transform tree;
-	public int spawnsLeft = 10;
+	public int spawnsLeft;
+	public int mapHeight;
+	public int mapWidth;
+	public float heightOfset;
 
 	// Use this for initialization
 	void Start () {
@@ -18,7 +21,7 @@ public class SpawnTrees : MonoBehaviour {
 	}
 
 	void spawnTrees () {
-		Vector3 position = new Vector3(Random.Range(25.0F, -25.0F), 1, Random.Range(25.0F, -25.0F));
+		Vector3 position = new Vector3(Random.Range(mapWidth*3, -mapWidth*3 ), heightOfset, Random.Range(mapHeight*3, -mapHeight*3 ));
 		Instantiate (tree, position, Quaternion.identity);
 		spawnsLeft -= 1;
 

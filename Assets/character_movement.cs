@@ -25,7 +25,8 @@ public class character_movement : MonoBehaviour {
 
 
 	void Start () {
-	
+		Screen.lockCursor = true;
+
 	}
 	
 
